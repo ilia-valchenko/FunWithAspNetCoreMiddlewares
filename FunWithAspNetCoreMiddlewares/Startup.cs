@@ -68,6 +68,35 @@ namespace FunWithAspNetCoreMiddlewares
                 await context.Response.WriteAsync($"Hello World! Counter: {counter}");
             });
 
+            // ****************** HOW IT WORKS UNDER THE HOOD ******************
+            // public delegate Task RequestDelegate(HttpContext context)
+
+            //public static void Run(this IApplicationBuilder app, RequestDelegate handler)
+            //{
+            //    if (app == null)
+            //    {
+            //        throw new ArgumentNullException(...);
+            //    }
+
+            //    if (handler == null)
+            //    {
+            //        throw new ArgumentNullException(...);
+            //    }
+
+            //    app.Use(_ => handler);
+            //}
+
+            //public static IApplicationBuilder Use(this IApplicationBuilder app, Func<RequestDelegate, RequestDelegate> middleware)
+            //{
+            //    // What is the _components?
+            //    // private readonly IList<Func<RequestDelegate, RequestDelegate>> _components = new List(...);
+
+            //    _components.Add(middleware);
+            //    return this;
+            //}
+
+            // *****************************************************************
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
