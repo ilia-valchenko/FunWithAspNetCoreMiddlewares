@@ -36,3 +36,6 @@ public void Configure(IApplicationBuilder app)
     app.Map("/MyDelegate", MyDelegate);
 }
 ```
+
+![Request Delegate Ppeline](./src/request-delegate-pipeline.png)
+![Middleware Ppeline](./src/middleware-pipeline.png)
